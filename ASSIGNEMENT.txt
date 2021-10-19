@@ -1,0 +1,11 @@
+This is a Java programming assignment. You should hand in a Jar file (renamed zip) of a working program. The main method should name a few actor pairs, search a graph to determine the distance between each actor pair, and print the results to the console. You may work alone or in a team of two. This is a complex task so break it down into testable chunks. Expect to devote a few days to each chunk.
+
+We are going to solve the problem known as Six Degrees of Kevin Bacon. Analyze the movie actor data file called movies-mpaa.txt on Sedgewick's real world data page. Each movie record is on its own line. Fields are separated by the slash character. Java's String.split() function might help parse each line. For code testing, it might help to create a subset containing only two movies starring Kevin Bacon.
+
+Load the data into an undirected bipartite graph in RAM. Add a vertex for every movie or actor. Add an edge for every actor-in-movie association. Using Sedgewick's Graph, every vertex has a unique int and every edge has a unique pair of ints to represent its vertices. Since the graph won't accept movie names or actor names, you need to design separate data structures.
+
+One data structure converts an int (vertex ID) to a string (movie or actor name). The fastest structure would be an array such that array element X has the name represented by vertex X in the graph.
+
+Another data structure converts string (movie or actor name) to int (vertex ID). This is useful for assigning an ID to a movie or actor. For example, the first time you see Kevin Bacon, you assign him the next available ID and add him to the hash table. The second time you see Kevin Bacon, retrieve his ID from the hash table. You could use a Java HashMap with String keys and Integer values.
+
+Finally, use the graph to compute the number of hops between some of your favorite actors. You could compute with Sedgewick's BreadthFirstPaths class. You can make it compute the number of hops from your source vertex to every other vertex. Then, you can call the distTo(v) or pathTo(v) methods to describe a path from your source vertex to any other vertex. It will be hard to know whether any answer is correct but you could help by printing the actors and movies along the discovered paths.
