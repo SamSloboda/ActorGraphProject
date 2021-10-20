@@ -1,8 +1,8 @@
-/**
- *  Author: Samuel Sloboda
- *  Date: 10/19/2021
- *  Description: This class works as a parser from Text  file into ArrayList of Vertices (with IDs of -1).
- *  The correct IDs will be assigned later in the graph building phase.
+/*
+   Author: Samuel Sloboda
+   Date: 10/19/2021
+   Description: This class works as a parser from Text  file into ArrayList of Vertices (with IDs of -1).
+   The correct IDs will be assigned later in the graph building phase.
  */
 package com.educational;
 import java.io.*;
@@ -10,14 +10,15 @@ import java.util.ArrayList;
 
 
 public class Parser {
-    private boolean parsingComplete = false;
-    private ArrayList<Vertex> arrayOfVertices = new ArrayList<>();
+
+    private final ArrayList<Vertex> arrayOfVertices = new ArrayList<>();
 
     public boolean parseFileToArray(String path) {
+        boolean parsingComplete = false;
         try {
-            FileReader input = new FileReader(new File(path));
+            FileReader input = new FileReader(path);
             BufferedReader br = new BufferedReader(input);
-            String line = null;
+            String line;
 
             while ((line = br.readLine()) != null) {
                 String[] lineArray = line.split("/");
