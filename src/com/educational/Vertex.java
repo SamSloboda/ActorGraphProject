@@ -10,6 +10,10 @@ public class Vertex {
         this.ID=id;
         this.isActor = actor;
     }
+    public Vertex(String name, boolean actor){
+        this.Name=name;
+        this.isActor = actor;
+    }
     public Vertex(){
     }
 
