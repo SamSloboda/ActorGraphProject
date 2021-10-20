@@ -10,6 +10,8 @@ public class Vertex {
         this.ID=id;
         this.isActor = actor;
     }
+    public Vertex(){
+    }
 
     public String getName(){
         return this.Name;
