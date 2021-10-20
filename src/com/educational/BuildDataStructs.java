@@ -23,7 +23,6 @@ public class BuildDataStructs {
         boolean completedParsing = p1.parseFileToArray(pathName);
         if(completedParsing){
             ArrayList<Vertex> arry = p1.getVerticesArrayList();
-            //p1.printParsedArray();
             return arry;
         }else{
             return null;
@@ -58,6 +57,11 @@ public class BuildDataStructs {
     }
     public void printArraySize(){
         System.out.println("Size of Array = "+idToStringArray.length);
+    }
+    private void printArrayOfVertices(ArrayList<Vertex> arry){
+        for(Vertex v: arry){
+            System.out.println(v.toString());
+        }
     }
 
 }
