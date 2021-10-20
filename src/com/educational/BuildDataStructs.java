@@ -29,8 +29,8 @@ public class BuildDataStructs {
         }
     }
     private void buildTables(){
-        int lengthOfArray = parsedArray.size();
-        int capacityOfHashMap = parsedArray.size() * 2;
+        int lengthOfArray = parsedArray.size(); //Problematic line of the code, this number is not true can be fixed by t.odo item 1.
+        int capacityOfHashMap = parsedArray.size()*2; //Multiplied the capacity for the test dataset, for the real one the parsedArray.size() is more than a double of the number of keys.
         idToStringArray = new String[lengthOfArray];
         stringToIdHashMap = new HashMap<String, Integer>(capacityOfHashMap);
 
@@ -65,3 +65,19 @@ public class BuildDataStructs {
     }
 
 }
+/*
+TODO:
+1) Think about separation of methods: BuildHashMap, BuildArray, and Build Graph instead of BuildTables.
+PROS:
+i) This would fix the problem with array capacity as it would be the right size. (I will know in forward what the proper size is.)
+ii) The returns of the HashMap, Array and Graph would be possible for the future manipulation with it. Such as find something in the graph...
+
+CONS:
+i) More useless iterations.
+ii) With this the algorithm would be 3*N instead of N.(It is the risk that I am willing to take.)
+
+2) Realize how would I know, if the movie and the actor are related???
+SOLUTION:
+i) Work with it while parsing, or constantly comparing the parsedArray (of Vertices) with the stringArray of Vertices.
+
+ */
