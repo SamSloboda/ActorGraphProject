@@ -1,11 +1,16 @@
+/**
+ *  Author: Samuel Sloboda
+ *  Date: 10/19/2021
+ *  Description: This class works as a parser from Text  file into ArrayList of Vertices.
+ *
+ */
 package com.educational;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class Parser {
     public static void main(String[] args) throws IOException {
-
         FileReader input = new FileReader(new File("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/test_movies.txt"));
         BufferedReader br = new BufferedReader(input);
         String myLine = null;
