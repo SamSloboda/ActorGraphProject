@@ -31,5 +31,12 @@ public class Vertex {
         isActor = actor;
     }
 
-
+    @Override
+    public String toString() {
+        return "Vertex{" +
+                "Name='" + Name + '\'' +
+                ", ID=" + ID +
+                ", isActor=" + isActor +
+                '}';
+    }
 }
