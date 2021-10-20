@@ -36,6 +36,11 @@ public class Parser {
     public ArrayList getVerticesArrayList(){
         return arrayOfVertices;
     }
+    public void printParsedArray(){
+        for(Vertex v: arrayOfVertices){
+            System.out.println(v.toString());
+        }
+    }
 }
 
 
