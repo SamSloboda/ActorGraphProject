@@ -6,11 +6,12 @@ public class GraphHandler {
     public GraphHandler() {
         BuildDataStructs bds = new BuildDataStructs("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/test_movies.txt");
         graph = bds.getActorGraph();
+        System.out.println(graph.toString());
+        bds.printArray();
     }
 }
 /*
 TODO:
-1) BuildTables. Constructor class. DONE!
-2) getActorGraph and save it here. Constructor class. DONE!
-3) Then manipulation starts. Manipulation classes. getDistance. (this will be useful)
+1) Then manipulation starts. Manipulation classes. getDistance. (this will be useful)
+2) We will need to access the built HashMap and the built Array from BuildDataStructs.java
  */
