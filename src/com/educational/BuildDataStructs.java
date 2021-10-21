@@ -1,10 +1,13 @@
 package com.educational;
+import edu.princeton.cs.algs4.Graph;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class BuildDataStructs {
     private ArrayList<Vertex> parsedArray;
     private String pathName;
+    Graph actorGraph;
     HashMap<String, Integer> stringToIdHashMap;
     String[] idToStringArray;
 
@@ -12,7 +15,6 @@ public class BuildDataStructs {
     public BuildDataStructs(String path){
         this.pathName=path;
         parsedArray = getParsedArray();
-
         buildTables();
 
 
@@ -29,20 +31,42 @@ public class BuildDataStructs {
         }
     }
     private void buildTables(){
-        int lengthOfArray = parsedArray.size(); //Problematic line of the code, this number is not true can be fixed by t.odo item 1.
+        buildHashMap();
+        buildIDtoStringArray();
+    }
+    /*
+    Builds the HashMap and sets the correct IDs to every element of the Vertices ArrayList.
+     */
+    public HashMap<String, Integer> buildHashMap(){
         int capacityOfHashMap = parsedArray.size()*2; //Multiplied the capacity for the test dataset, for the real one the parsedArray.size() is more than a double of the number of keys.
-        idToStringArray = new String[lengthOfArray];
         stringToIdHashMap = new HashMap<String, Integer>(capacityOfHashMap);
 
         int idCount = 0;
         for(Vertex v: parsedArray){
             if(stringToIdHashMap.isEmpty() || !stringToIdHashMap.containsKey(v.getName())){
                 v.setID(idCount);
-                idToStringArray[v.getID()] = v.getName();
                 stringToIdHashMap.put(v.getName(),v.getID());
                 idCount++;
             }
         }
+        return stringToIdHashMap;
+    }
+    /*
+    Builds the Array of strings, the indexes are vertexIDs and corresponding array elements are name/movie name.
+     */
+    public String[] buildIDtoStringArray(){
+        int lengthOfArray = stringToIdHashMap.size();
+        idToStringArray = new String[lengthOfArray];
+
+        for(Vertex v: parsedArray){
+            if(stringToIdHashMap.isEmpty() || !stringToIdHashMap.containsKey(v.getName())){
+                idToStringArray[v.getID()] = v.getName();
+            }
+        }
+        return idToStringArray;
+    }
+    public Graph buildGraph(){
+        return actorGraph;
     }
     public void printHashMap(){
         System.out.println(stringToIdHashMap);
@@ -67,10 +91,10 @@ public class BuildDataStructs {
 }
 /*
 TODO:
-1) Think about separation of methods: BuildHashMap, BuildArray, and Build Graph instead of BuildTables.
+1) Think about separation of methods: BuildHashMap, BuildArray, and Build Graph instead of BuildTables. DONE!!!
 PROS:
-i) This would fix the problem with array capacity as it would be the right size. (I will know in forward what the proper size is.)
-ii) The returns of the HashMap, Array and Graph would be possible for the future manipulation with it. Such as find something in the graph...
+i) This would fix the problem with array capacity as it would be the right size. (I will know in forward what the proper size is.) FIXED
+ii) The returns of the HashMap, Array and Graph would be possible for the future manipulation with it. Such as find something in the graph... FIXED
 
 CONS:
 i) More useless iterations.
@@ -78,6 +102,8 @@ ii) With this the algorithm would be 3*N instead of N.(It is the risk that I am 
 
 2) Realize how would I know, if the movie and the actor are related???
 SOLUTION:
-i) Work with it while parsing, or constantly comparing the parsedArray (of Vertices) with the stringArray of Vertices.
+i) Work with it while parsing, or constantly comparing the parsedArray (of Vertices) with the stringArray of Vertices. XXX
+ii) Approach: I will try to work on this with simple VerticesArray traversal, and rely on the fact that the movie is followed by actors
+until the next movie...This is how I will create the relationship(link). It is a bit risky, but I will take this approach now.
 
  */
