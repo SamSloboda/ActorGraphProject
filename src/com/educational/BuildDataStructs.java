@@ -33,6 +33,7 @@ public class BuildDataStructs {
     private void buildTables(){
         buildHashMap();
         buildIDtoStringArray();
+        buildGraph();
     }
     /*
     Builds the HashMap and sets the correct IDs to every element of the Vertices ArrayList.
@@ -47,6 +48,9 @@ public class BuildDataStructs {
                 v.setID(idCount);
                 stringToIdHashMap.put(v.getName(),v.getID());
                 idCount++;
+            }
+            else if(stringToIdHashMap.containsKey(v.getName())){
+                v.setID(stringToIdHashMap.get(v.getName()));    //in the case that the the Vertex has already appeared in the HashMap, need to set th proper ID!!!
             }
         }
         return stringToIdHashMap;
@@ -66,13 +70,34 @@ public class BuildDataStructs {
         return idToStringArray;
     }
     public Graph buildGraph(){
+        int numOfVertices = getHashMapSize();
+        actorGraph = new Graph(numOfVertices); //initialize the Graph with number of vertices (HashMap has the correct number of vertices.)
+
+        int temp = 0;
+        for(int i = 0; i < parsedArray.size();i++){
+            if(!parsedArray.get(i).getIsActor()){
+                for(int j = i+1;j < parsedArray.size() && parsedArray.get(j).getIsActor();j++){
+                    int movieID = parsedArray.get(i).getID();
+                    int actorID = parsedArray.get(j).getID();
+                    actorGraph.addEdge(movieID, actorID);
+                    temp = j;
+                }
+                i = temp;
+            }
+        }
         return actorGraph;
+    }
+    public void printGraph(){
+        System.out.println(actorGraph.toString());
     }
     public void printHashMap(){
         System.out.println(stringToIdHashMap);
     }
     public void printHashMapSize(){
         System.out.println("Size of HashMap = "+stringToIdHashMap.size());
+    }
+    public int getHashMapSize(){
+        return stringToIdHashMap.size();
     }
     public void printArray(){
         for(int i = 0;i<idToStringArray.length;i++){
