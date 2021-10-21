@@ -140,4 +140,6 @@ until the next movie...This is how I will create the relationship(link). It is a
 
 TODO:
 1) FOUND A BUG IN ARRAY. = ALL VALUES ARE NULL...
+TO FIX THIS BUG:
+Look up the buildIDtoStringArray conditions as the second condition looks up for the duplicates, modify the adding condition.
  */
