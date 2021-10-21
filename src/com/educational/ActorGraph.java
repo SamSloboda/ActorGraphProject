@@ -9,14 +9,17 @@ import java.util.ArrayList;
 
 public class ActorGraph {
     public static void main(String[] args) {
-        BuildDataStructs bds = new BuildDataStructs("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/test_movies.txt");
-        bds.printHashMap();
-        bds.printGraph();
+        GraphHandler graphHandler = new GraphHandler();
     }
 }
 
 /*
 TODO:
-Create an Graph manipulator class.
-Finding stuff...in this class it will only return the distance. it will be called GraphHandler.
+Create an Graph manipulator class. DONE!
+Finding stuff...in this class it will only return the distance. it will be called GraphHandler.DONE!
+This will be the USER accessible class:
+USER SHOULD:
+1) Pass the pair of Actors (not movies)
+2) Pass the path of the file they want to get parsed.
+3) Get the number of steps between them.
  */

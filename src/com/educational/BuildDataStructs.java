@@ -16,10 +16,8 @@ public class BuildDataStructs {
         this.pathName=path;
         parsedArray = getParsedArray();
         buildTables();
-
-
-
     }
+
     private ArrayList getParsedArray(){
         Parser p1 = new Parser();
         boolean completedParsing = p1.parseFileToArray(pathName);
@@ -89,6 +87,9 @@ public class BuildDataStructs {
     }
     public void printGraph(){
         System.out.println(actorGraph.toString());
+    }
+    public Graph getActorGraph() {
+        return actorGraph;
     }
     public void printHashMap(){
         System.out.println(stringToIdHashMap);
