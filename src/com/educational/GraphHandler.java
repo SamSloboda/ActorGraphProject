@@ -33,6 +33,7 @@ public class GraphHandler {
         Iterable <Integer> iterable;
         ArrayList <Integer> idArray = new ArrayList<Integer>();
         ArrayList <String> stringArray = new ArrayList<String>();
+        String result = "";
         breadthFirstPaths = new BreadthFirstPaths(graph,actor1ID);
 
         if(breadthFirstPaths.hasPathTo(actor2ID)){
@@ -42,8 +43,19 @@ public class GraphHandler {
             for(Integer id: idArray){
                 stringArray.add(IDtoString[id]);
             }
+
+            for(int i=0; i< stringArray.size();i++){
+                if(i==0){
+                    result = stringArray.get(i);
+                }
+                else if(i % 2==0 && i!=0){
+                    result = result +"<--"+ stringArray.get(i);
+                }else if(i % 2 == 1){
+                    result = result +"-->"+stringArray.get(i);
+                }
+            }
             System.out.println("THE ROUTE IS: ");
-            System.out.println(stringArray.toString());
+            System.out.println(result);
         }
     }
     public void printDistance(String actor1, String actor2){

@@ -10,8 +10,8 @@ import java.util.ArrayList;
 public class ActorGraph {
     public static void main(String[] args) {
         GraphHandler graphHandler = new GraphHandler("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/movies-mpaa.txt");
-        graphHandler.printDistance("Pitt, Brad", "Bacon, Kevin");
-        graphHandler.printRoute("Pitt, Brad","Bacon, Kevin");
+        graphHandler.printDistance("Sbarge, Raphael", "Mignacco, Darlene");
+        graphHandler.printRoute("Sbarge, Raphael","Mignacco, Darlene");
     }
 }
 
