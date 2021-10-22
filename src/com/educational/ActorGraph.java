@@ -12,16 +12,22 @@ public class ActorGraph {
         GraphHandler graphHandler = new GraphHandler("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/movies-mpaa.txt");
         graphHandler.printDistance("Sbarge, Raphael", "Mignacco, Darlene");
         graphHandler.printRoute("Sbarge, Raphael","Mignacco, Darlene");
+
+        graphHandler.printDistance("Sbarge, Raphael", "Sbarge, Raphael");
+        graphHandler.printRoute("Sbarge, Raphael","Sbarge, Raphael");
     }
 }
 
 /*
-TODO:
+TODO-DONE:
 Create an Graph manipulator class. DONE!
 Finding stuff...in this class it will only return the distance. it will be called GraphHandler.DONE!
 This will be the USER accessible class:
 USER SHOULD:
-1) Pass the pair of Actors (not movies)
-2) Pass the path of the file they want to get parsed.
-3) Get the number of steps between them.
+1) Pass the pair of Actors (not movies) ==DONE!
+2) Pass the path of the file they want to get parsed. == DONE!
+3) Get the number of steps between them. == DONE!
+
+TODO:
+ASK ABOUT THE DISTANCE what should the number be?
  */

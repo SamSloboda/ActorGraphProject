@@ -63,7 +63,8 @@ public class GraphHandler {
     }
 }
 /*
-TODO:
+TODO - DONE:
 1) Then manipulation starts. Manipulation classes. getDistance. (this will be useful)
 2) We will need to access the built HashMap and the built Array from BuildDataStructs.java = done!
+
  */
