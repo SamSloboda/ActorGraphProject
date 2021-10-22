@@ -1,28 +1,53 @@
 package com.educational;
+import edu.princeton.cs.algs4.BreadthFirstPaths;
 import edu.princeton.cs.algs4.Graph;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 
 public class GraphHandler {
     Graph graph;
     HashMap hashMap;
     String[] IDtoString;
+    BreadthFirstPaths breadthFirstPaths;
 
-    public GraphHandler() {
-        BuildDataStructs bds = new BuildDataStructs("/Users/samsloboda/OneDrive - Shepherd University/4 Shepherd Senior/Fall 2021/CIS431/Projects/ActorGraphProject/src/com/educational/movies-mpaa.txt");
+    public GraphHandler(String pathname) {
+        BuildDataStructs bds = new BuildDataStructs(pathname);
         graph = bds.getActorGraph();
         hashMap = bds.getHashMap();
         IDtoString = bds.getIdToStringArray();
-
-        System.out.println(hashMap.get("Bacon, Kevin"));
-        System.out.println(graph.degree(6764));
-
     }
-    public int getDistance(){
-        return 0;
+    public int getDistance(String actor1, String actor2){
+        int actor1ID = (int)hashMap.get(actor1);
+        int actor2ID = (int)hashMap.get(actor2);
+        breadthFirstPaths = new BreadthFirstPaths(graph,actor1ID);
+
+        if(breadthFirstPaths.hasPathTo(actor2ID)){
+            return breadthFirstPaths.distTo(actor2ID);
+        }
+        return -1;
     }
-    public void printRoute(){
-        System.out.println("Road 66!");
+    public void printRoute(String actor1, String actor2){
+        int actor1ID = (int)hashMap.get(actor1);
+        int actor2ID = (int)hashMap.get(actor2);
+        Iterable <Integer> iterable;
+        ArrayList <Integer> idArray = new ArrayList<Integer>();
+        ArrayList <String> stringArray = new ArrayList<String>();
+        breadthFirstPaths = new BreadthFirstPaths(graph,actor1ID);
+
+        if(breadthFirstPaths.hasPathTo(actor2ID)){
+            iterable = breadthFirstPaths.pathTo(actor2ID);
+            iterable.forEach(idArray::add);
+
+            for(Integer id: idArray){
+                stringArray.add(IDtoString[id]);
+            }
+            System.out.println("THE ROUTE IS: ");
+            System.out.println(stringArray.toString());
+        }
+    }
+    public void printDistance(String actor1, String actor2){
+        System.out.println("THE DISTANCE IS: "+getDistance(actor1,actor2));
     }
 }
 /*
