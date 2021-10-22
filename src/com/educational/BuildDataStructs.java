@@ -142,8 +142,4 @@ TODO - DONE:
 1) FOUND A BUG IN ARRAY. = ALL VALUES ARE NULL...
 TO FIX THIS BUG:
 Look up the buildIDtoStringArray conditions as the second condition looks up for the duplicates, modify the adding condition. == FIXED!
-It is fixed that it rewrites the Array element when the same element occurs, it is not really good algorithm, but it works. No time to be fixed.
-
-TODO - IMPROVEMENTS:
-1) Fix  buildIDtoStringArray so it doesn't override the multiples. == FIXED!
  */
