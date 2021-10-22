@@ -14,6 +14,9 @@ public class GraphHandler {
         hashMap = bds.getHashMap();
         IDtoString = bds.getIdToStringArray();
 
+        System.out.println(hashMap.get("Bacon, Kevin"));
+        System.out.println(graph.degree(6764));
+
     }
     public int getDistance(){
         return 0;
