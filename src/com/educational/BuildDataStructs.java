@@ -61,7 +61,7 @@ public class BuildDataStructs {
         idToStringArray = new String[lengthOfArray];
 
         for(Vertex v: parsedArray){
-            if(stringToIdHashMap.isEmpty() || !stringToIdHashMap.containsKey(v.getName())){
+            if(idToStringArray[v.getID()] == null){
                 idToStringArray[v.getID()] = v.getName();
             }
         }
@@ -138,8 +138,12 @@ i) Work with it while parsing, or constantly comparing the parsedArray (of Verti
 ii) Approach: I will try to work on this with simple VerticesArray traversal, and rely on the fact that the movie is followed by actors
 until the next movie...This is how I will create the relationship(link). It is a bit risky, but I will take this approach now.
 
-TODO:
+TODO - DONE:
 1) FOUND A BUG IN ARRAY. = ALL VALUES ARE NULL...
 TO FIX THIS BUG:
-Look up the buildIDtoStringArray conditions as the second condition looks up for the duplicates, modify the adding condition.
+Look up the buildIDtoStringArray conditions as the second condition looks up for the duplicates, modify the adding condition. == FIXED!
+It is fixed that it rewrites the Array element when the same element occurs, it is not really good algorithm, but it works. No time to be fixed.
+
+TODO - IMPROVEMENTS:
+1) Fix  buildIDtoStringArray so it doesn't override the multiples. == FIXED!
  */
