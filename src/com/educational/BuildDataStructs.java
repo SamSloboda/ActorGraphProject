@@ -119,27 +119,4 @@ public class BuildDataStructs {
             System.out.println(v.toString());
         }
     }
-
 }
-/*
-TODO = DONE!:
-1) Think about separation of methods: BuildHashMap, BuildArray, and Build Graph instead of BuildTables. DONE!!!
-PROS:
-i) This would fix the problem with array capacity as it would be the right size. (I will know in forward what the proper size is.) FIXED
-ii) The returns of the HashMap, Array and Graph would be possible for the future manipulation with it. Such as find something in the graph... FIXED
-
-CONS:
-i) More useless iterations.
-ii) With this the algorithm would be 3*N instead of N.(It is the risk that I am willing to take.)
-
-2) Realize how would I know, if the movie and the actor are related???
-SOLUTION:
-i) Work with it while parsing, or constantly comparing the parsedArray (of Vertices) with the stringArray of Vertices. XXX
-ii) Approach: I will try to work on this with simple VerticesArray traversal, and rely on the fact that the movie is followed by actors
-until the next movie...This is how I will create the relationship(link). It is a bit risky, but I will take this approach now.
-
-TODO - DONE:
-1) FOUND A BUG IN ARRAY. = ALL VALUES ARE NULL...
-TO FIX THIS BUG:
-Look up the buildIDtoStringArray conditions as the second condition looks up for the duplicates, modify the adding condition. == FIXED!
- */

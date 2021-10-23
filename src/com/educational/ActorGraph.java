@@ -1,13 +1,18 @@
-package com.educational;
 /*
-This is the main class of this project!
+@author Samuel Sloboda
+@author Kevin Wilson
+@date 10/22/2021
+
+This is a main class for the whole project. It is the only runnable element of this whole project.
  */
-
-import edu.princeton.cs.algs4.Graph;
-
-import java.util.ArrayList;
+package com.educational;
 
 public class ActorGraph {
+    /*
+    This is the main class. I have created some test cases.
+    Distance of 1 is when two actors appeared in the same movie together.
+    Distance of n is number of EDGES counting only ACTOR TO ACTOR edges.
+     */
     public static void main(String[] args) {
         GraphHandler graphHandler = new GraphHandler("src/com/educational/movies-mpaa.txt");
 
@@ -18,17 +23,3 @@ public class ActorGraph {
         graphHandler.printDistAndPath("Sbarge, Raphael", "Mignacco, Darlene");
     }
 }
-
-/*
-TODO-DONE:
-Create an Graph manipulator class. DONE!
-Finding stuff...in this class it will only return the distance. it will be called GraphHandler.DONE!
-This will be the USER accessible class:
-USER SHOULD:
-1) Pass the pair of Actors (not movies) ==DONE!
-2) Pass the path of the file they want to get parsed. == DONE!
-3) Get the number of steps between them. == DONE!
-
-TODO:
-ASK ABOUT THE DISTANCE what should the number be?
- */
