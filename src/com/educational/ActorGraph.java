@@ -2,7 +2,7 @@
 @author Samuel Sloboda
 @author Kevin Wilson
 @date 10/22/2021
-GitHub:
+GitHub: https://github.com/SamSloboda/ActorGraphProject
 
 This is a main class for the whole project. It is the only runnable element of this whole project.
  */
