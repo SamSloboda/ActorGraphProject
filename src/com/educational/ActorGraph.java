@@ -23,6 +23,6 @@ public class ActorGraph {
         graphHandler.printDistAndPath("Sbarge, Raphael", "Mignacco, Darlene");
 
         System.out.println("\n*** TEST 3: ACTORS NOT IN THE SAME MOVIE ***");
-        graphHandler.printDistAndPath("Marber, Samuel J.", "");
+        graphHandler.printDistAndPath("Marber, Samuel J.", "Clément, Aurore");
     }
 }
