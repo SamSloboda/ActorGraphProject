@@ -2,6 +2,7 @@
 @author Samuel Sloboda
 @author Kevin Wilson
 @date 10/22/2021
+GitHub:
 
 This is a main class for the whole project. It is the only runnable element of this whole project.
  */
@@ -23,6 +24,6 @@ public class ActorGraph {
         graphHandler.printDistAndPath("Sbarge, Raphael", "Mignacco, Darlene");
 
         System.out.println("\n*** TEST 3: ACTORS NOT IN THE SAME MOVIE ***");
-        graphHandler.printDistAndPath("Marber, Samuel J.", "Clément, Aurore");
+        graphHandler.printDistAndPath("Marber, Samuel J.", "Hamilton, Mahlon");
     }
 }
