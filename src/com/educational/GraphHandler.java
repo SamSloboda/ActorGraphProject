@@ -18,6 +18,9 @@ public class GraphHandler {
         IDtoString = bds.getIdToStringArray();
     }
     public int getDistance(String actor1, String actor2){
+        if(hashMap.get(actor1) == null || hashMap.get(actor2) == null){
+            return -1;
+        }
         int actor1ID = (int)hashMap.get(actor1);
         int actor2ID = (int)hashMap.get(actor2);
         breadthFirstPaths = new BreadthFirstPaths(graph,actor1ID);
@@ -28,6 +31,14 @@ public class GraphHandler {
         return -1;
     }
     public void printRoute(String actor1, String actor2){
+        if(hashMap.get(actor1)==null){
+            System.out.println(actor1+" WAS NOT FOUND IN THE FILE!");
+            return;
+        }
+        if(hashMap.get(actor2)==null){
+            System.out.println(actor2+" WAS NOT FOUND IN THE FILE!");
+            return;
+        }
         int actor1ID = (int)hashMap.get(actor1);
         int actor2ID = (int)hashMap.get(actor2);
         Iterable <Integer> iterable;
@@ -59,7 +70,8 @@ public class GraphHandler {
         }
     }
     public void printDistance(String actor1, String actor2){
-        System.out.println("THE DISTANCE FROM "+actor1+" TO " + actor2 +" IS: "+getDistance(actor1,actor2)/2);
+        if((getDistance(actor1,actor2))!=-1){
+        System.out.println("THE DISTANCE FROM "+actor1+" TO " + actor2 +" IS: "+getDistance(actor1,actor2)/2);}
     }
     public void printDistAndPath(String actor1, String actor2){
         printDistance(actor1,actor2);
