@@ -10,8 +10,12 @@ import java.util.ArrayList;
 public class ActorGraph {
     public static void main(String[] args) {
         GraphHandler graphHandler = new GraphHandler("src/com/educational/movies-mpaa.txt");
-        graphHandler.printDistance("Sbarge, Raphael", "Mignacco, Darlene");
-        graphHandler.printRoute("Sbarge, Raphael","Mignacco, Darlene");
+
+        System.out.println("\n*** TEST 1: ACTORS IN THE SAME MOVIE ***");
+        graphHandler.printDistAndPath("Pitt, Brad", "Bacon, Kevin");
+
+        System.out.println("\n*** TEST 2: ACTORS NOT IN THE SAME MOVIE ***");
+        graphHandler.printDistAndPath("Sbarge, Raphael", "Mignacco, Darlene");
     }
 }
 

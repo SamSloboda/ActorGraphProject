@@ -54,12 +54,16 @@ public class GraphHandler {
                     result = result +"-->"+stringArray.get(i);
                 }
             }
-            System.out.println("THE ROUTE IS: ");
+            System.out.println("THE ROUTE FROM "+actor1+" TO " + actor2 +" IS: ");
             System.out.println(result);
         }
     }
     public void printDistance(String actor1, String actor2){
-        System.out.println("THE DISTANCE IS: "+getDistance(actor1,actor2));
+        System.out.println("THE DISTANCE FROM "+actor1+" TO " + actor2 +" IS: "+getDistance(actor1,actor2)/2);
+    }
+    public void printDistAndPath(String actor1, String actor2){
+        printDistance(actor1,actor2);
+        printRoute(actor1,actor2);
     }
 }
 /*
