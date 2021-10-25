@@ -420,7 +420,7 @@ public final class Picture implements ActionListener {
      */
     public void save(String name) {
         if (name == null) throw new IllegalArgumentException("argument to save() is null");
-  	if (name.length() == 0) throw new IllegalArgumentException("argument to save() is the empty string");
+      if (name.length() == 0) throw new IllegalArgumentException("argument to save() is the empty string");
         File file = new File(name);
         if (file == null) throw new IllegalArgumentException("could not open file: '" + name + "'");
         filename = file.getName();

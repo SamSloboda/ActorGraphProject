@@ -120,3 +120,9 @@ public class BuildDataStructs {
         }
     }
 }
+
+/*
+    TODO:
+    Fix the file parsing, if there is problem with path. I just moved the problem for later (null pointer = parsedArray is null)
+ */
+
